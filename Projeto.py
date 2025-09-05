@@ -1,7 +1,6 @@
 while True:
     print("Saudações, sou o Soldadinho-do-Araripe, guardião do Cariri")
-    entrada = input("Digite o número da forma que deseja que eu me comunique com você!! "
-                    "1 - Formal, 2 - Engraçado, 3 - Regional(Cariri), digite '0' para encerrar a conversa: ")
+    entrada = input("Digite o número da forma que deseja que eu me comunique com você!! 1 - Formal, 2 - Engraçado, 3 - Regional(Cariri), digite '0' para encerrar a conversa: ")
     
     if not entrada.isdigit():
         print("Por favor, digite apenas números!")
