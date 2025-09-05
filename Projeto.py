@@ -26,7 +26,7 @@ while True:
 
     interacao1 = int(interacao)
 
-    if digito == 1:  # Formal
+    if digito == 1:  
         if interacao1 == 1:
             print("Os pontos turísticos mais conhecidos da região são: Chapada do Araripe, o Geopark Araripe e o Museu de Paleontologia em Santana do Cariri.")
         elif interacao1 == 2:
@@ -34,7 +34,7 @@ while True:
         elif interacao1 == 3:
             print("Dois dos eventos mais populares são: O Festival Expocrato, que ocorre no mês de Julho na cidade de Crato e a Festa do Pau da Bandeira de Santo Antônio em Barbalha, que ocorre no mês de Junho.")
 
-    elif digito == 2:  # Engraçado
+    elif digito == 2: 
         if interacao1 == 1:
             print("Se liga! 📸 Chapada do Araripe, Geopark e Museu dos Dinossauros. Vai querer selfie até com os fósseis! 🦖😂")
         elif interacao1 == 2:
@@ -42,7 +42,7 @@ while True:
         elif interacao1 == 3:
             print("Dois rolês que bombam por aqui são: 🎉 o Festival Expocrato (em julho, lá no Crato 🤠) e a lendária Festa do Pau da Bandeira de Santo Antônio 🌳💪 (em junho, na Barbalha)! Bora se preparar que esses eventos são de perder o fôlego... e o rumo também 😂🍻.")
 
-    elif digito == 3:  # Regional
+    elif digito == 3: 
         if interacao1 == 1:
             print("Ôxente, cabra! Tu tem que conhecer a Chapada do Araripe, o Geopark e o Museu dos Dinossauros. É de encher os olhos, visse?")
         elif interacao1 == 2:
