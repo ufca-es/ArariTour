@@ -1,16 +1,23 @@
+# chatbot.py
+
 import random
 from collections import Counter
 
-arquivo_aprendizado = "aprendizado.txt" #arquivo para implementação de novas perguntas
-arquivo_historico   = "historico.txt"   # arquivo para registrar últimas 5 interações
-arquivo_relatorio   = "relatorio.txt"   # arquivo para relatório final
+# Arquivos de armazenamento
+arquivo_aprendizado = "aprendizado.txt"
+arquivo_historico = "historico.txt"
+arquivo_relatorio = "relatorio.txt"
 
-# --- Estatísticas ---
+# Estatísticas
 total_interacoes = 0
 contador_personalidade = Counter()
 contador_perguntas = Counter()
+ultima_resposta = None
 
-# --- Dicionário de respostas ---
+# Personalidades disponíveis
+personalidades = {1: "Formal", 2: "Engraçado", 3: "Regional"}
+
+# Dicionário de respostas
 respostas = {
     "Formal": {
         ("pontos turísticos", "atrações", "lugares para visitar", "locais", "roteiro"): [
@@ -71,94 +78,16 @@ respostas = {
     }
 }
 
-personalidades = {1: "Formal", 2: "Engraçado", 3: "Regional"}
-ultima_resposta = None
+# --- Funções principais do chatbot para uso na interface ---
 
-# --- Funções auxiliares ---
-def salvar_aprendizado(estilo, palavra_chave, resposta):
-    with open(arquivo_aprendizado, "a", encoding="utf-8") as arq:
-        arq.write(f"{estilo}|{palavra_chave}|{resposta}\n")
+def responder(pergunta_usuario, estilo):
+    global ultima_resposta, total_interacoes
 
-def salvar_historico(pergunta, resposta):
-    with open(arquivo_historico, "a", encoding="utf-8") as arq:
-        arq.write(f"Pergunta: {pergunta} | Resposta: {resposta}\n")
-
-def limpar_historico():
-    open(arquivo_historico, "w", encoding="utf-8").close()
-    print("Histórico limpo com sucesso! ✅")
-
-# --- gerar relatório ---
-def gerar_relatorio():
-    mais_perg = contador_perguntas.most_common(1)
-    pergunta_top = mais_perg[0][0] if mais_perg else "Nenhuma"
-    with open(arquivo_relatorio, "w", encoding="utf-8") as arq:
-        arq.write("=== Relatório de Interações ===\n")
-        arq.write(f"Total de interações: {total_interacoes}\n")
-        arq.write(f"Pergunta mais feita: {pergunta_top}\n")
-        arq.write("Uso de personalidades:\n")
-        for p, c in contador_personalidade.items():
-            arq.write(f"  {p}: {c}\n")
-    print("Relatório gerado em", arquivo_relatorio)
-
-def mostrar_sugestoes():
-    print("\nSugestões de perguntas mais frequentes:")
-    for p, _ in contador_perguntas.most_common(5):
-        print(" -", p)
-
-# --- Carrega histórico prévio ---
-for nome in [arquivo_aprendizado, arquivo_historico]:
-    try:
-        with open(nome, "r", encoding="utf-8") as arq:
-            linhas = arq.readlines()
-    except FileNotFoundError:
-        linhas = []
-
-if linhas:
-    print("\nÚltimas 5 interações anteriores:")
-    for l in linhas[-5:]:
-        print(l.strip())
-    print("-" * 40)
-
-# --- Loop principal ---
-while True:
-    print("\nSaudações, sou o Soldadinho-do-Araripe, guardião do Cariri")
-    print("[1] - Formal\n[2] - Engraçado\n[3] - Regional(Cariri)")
-    print("[4] - Limpar histórico\n[5] - Sugestões\n[6] - Relatório\n[0] - Encerrar")
-    entrada = input("Escolha uma opção: ")
-
-    if not entrada.isdigit():
-        print("Por favor, digite apenas números!")
-        continue
-    digito = int(entrada)
-
-    if digito == 0:
-        gerar_relatorio()
-        print("Encerrando a conversa. Até logo!")
-        break
-    elif digito == 4:
-        limpar_historico()
-        continue
-    elif digito == 5:
-        mostrar_sugestoes()
-        continue
-    elif digito == 6:
-        gerar_relatorio()
-        continue
-    elif digito not in personalidades:
-        print("Opção inválida, tente novamente!")
-        continue
-
-    estilo = personalidades[digito]
-    contador_personalidade[estilo] += 1
-    print(f"Você escolheu o estilo: {estilo}")
-
-    # --- Pergunta  ---
-    pergunta_usuario = input("Sobre o que você quer saber? (ex: pontos turísticos, hospedagem, eventos) ").strip()
     palavras_usuario = pergunta_usuario.lower().split()
     contador_perguntas[pergunta_usuario] += 1
+    contador_personalidade[estilo] += 1
     total_interacoes += 1
 
-    achou = False
     for chaves in respostas[estilo]:
         for palavra in palavras_usuario:
             if any(palavra in c.lower() for c in (chaves if isinstance(chaves, tuple) else (chaves,))):
@@ -171,27 +100,32 @@ while True:
                     possiveis.remove(ultima_resposta)
                 resposta_bot = random.choice(possiveis)
                 ultima_resposta = resposta_bot
-                print(resposta_bot)
                 salvar_historico(pergunta_usuario, resposta_bot)
-                achou = True
-                break
-        if achou:
-            break
+                return resposta_bot
 
-    if not achou:
-        print("Ainda não sei responder isso. 😢")
-        nova_resposta = input("Você pode me ensinar? Digite uma resposta apropriada: ").strip()
-        if pergunta_usuario in respostas[estilo]:
-            if isinstance(respostas[estilo][pergunta_usuario], list):
-                respostas[estilo][pergunta_usuario].append(nova_resposta)
-            else:
-                respostas[estilo][pergunta_usuario] = [
-                    respostas[estilo][pergunta_usuario],
-                    nova_resposta
-                ]
+    return None  # Não encontrou resposta
+
+def ensinar(estilo, pergunta_usuario, nova_resposta):
+    if pergunta_usuario in respostas[estilo]:
+        if isinstance(respostas[estilo][pergunta_usuario], list):
+            respostas[estilo][pergunta_usuario].append(nova_resposta)
         else:
-            respostas[estilo][pergunta_usuario] = [nova_resposta]
+            respostas[estilo][pergunta_usuario] = [
+                respostas[estilo][pergunta_usuario],
+                nova_resposta
+            ]
+    else:
+        respostas[estilo][pergunta_usuario] = [nova_resposta]
 
-        salvar_aprendizado(estilo, pergunta_usuario, nova_resposta)
-        salvar_historico(pergunta_usuario, nova_resposta)
-        print("Obrigado! Aprendi algo novo e salvei no arquivo aprendizado.txt ✅")
+    salvar_aprendizado(estilo, pergunta_usuario, nova_resposta)
+    salvar_historico(pergunta_usuario, nova_resposta)
+
+# --- Funções de suporte (salvamento de dados) ---
+
+def salvar_aprendizado(estilo, palavra_chave, resposta):
+    with open(arquivo_aprendizado, "a", encoding="utf-8") as arq:
+        arq.write(f"{estilo}|{palavra_chave}|{resposta}\n")
+
+def salvar_historico(pergunta, resposta):
+    with open(arquivo_historico, "a", encoding="utf-8") as arq:
+        arq.write(f"Pergunta: {pergunta} | Resposta: {resposta}\n")
