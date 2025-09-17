@@ -19,3 +19,4 @@ Pergunta: Gostaria que me desse as opções que você tem disponivel | Resposta:
 Pergunta: Gostaria que me desse as opções que você tem disponivel de informações que posso saber | Resposta: Tem de tudo: hotel chique, pousada aconchegante... só não vale dormir na praça 😅
 Pergunta: limpar historico | Resposta: O historico dessa conversa será limpo, basta recarregar
 Pergunta: Historico | Resposta: O historico dessa conversa será limpo, basta recarregar
+Pergunta: OI | Resposta: Olá, o que você deseja saber? 

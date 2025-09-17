@@ -1,2 +1,3 @@
 Engraçado|Oi|Olá, o que você deseja saber?
 Engraçado|limpar historico|O historico dessa conversa será limpo, basta recarregar
+Regional|OI|Olá, o que você deseja saber? 

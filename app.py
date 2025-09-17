@@ -1,93 +1,78 @@
-# app.py
-import streamlit as st
+import gradio as gr
 import random
+from collections import Counter
 
-# Seu dicionário de respostas e personalidades (reduzi para deixar enxuto, mas você pode colocar o seu completo)
+# --- Configuração inicial ---
+total_interacoes = 0
+contador_personalidade = Counter()
+contador_perguntas = Counter()
+ultima_resposta = None
+
+# Respostas da Ararinha
 respostas = {
-    "Formal": {
-        ("pontos turísticos", "atrações", "lugares para visitar"): [
-            "Os pontos turísticos mais conhecidos são: Chapada do Araripe, Geopark e Museu de Paleontologia.",
-            "Você pode visitar a Chapada do Araripe, Geopark e Museu de Paleontologia em Santana do Cariri."
-        ],
-        ("hospedagem", "hotel", "pousada"): [
-            "A maior quantidade de opções está em Juazeiro do Norte, Barbalha e Crato.",
-            "Existem hotéis econômicos e pousadas aconchegantes nas principais cidades."
-        ],
-    },
-    "Engraçado": {
-        ("pontos turísticos", "atrações", "lugares para visitar"): [
-            "Quer selfie com dinossauro? Museu dos Dinossauros! 🦖😂",
-            "Chapada do Araripe é o lugar para vistas de tirar o fôlego! 🌄"
-        ],
-        ("hospedagem", "hotel", "pousada"): [
-            "Tem hotel chique e pousada aconchegante... só não durma na praça! 😅",
-            "Opções não faltam: do luxo ao simples, tem pra todo gosto!"
-        ],
-    }
+    ("pontos turísticos", "atrações", "lugares para visitar", "locais", "roteiro"): [
+        "🦜 Chapada do Araripe, Geopark e Museu dos Dinossauros são os mais visitados, cabra!",
+        "🦜 Vai por mim: Chapada pra foto, Geopark pra aprender e museu pros bichim antigos! 🦖",
+    ],
+    ("hospedagem", "hotel", "hotéis", "pousada", "pousadas",
+     "alojamento", "alojamentos", "acomodação", "acomodações", "estadia"): [
+        "🦜 Em Juazeiro, Crato e Barbalha tem hotel e pousada arretada, pra todo bolso!",
+        "🦜 Oxente, se quiser conforto tem hotel, se quiser aconchego tem pousada! 😴",
+    ],
+    ("eventos", "festas", "shows", "programação"): [
+        "🦜 No Cariri o forró é garantido: Festa do Pau da Bandeira e Expocrato são os maiores!",
+        "🦜 Pau da Bandeira é fé, Expocrato é música boa! 🎶",
+    ]
 }
 
-personalidades = {1: "Formal", 2: "Engraçado"}
+# --- Função de resposta ---
+def responder(mensagem, historico):
+    global ultima_resposta, total_interacoes
 
-# Inicializa o estado da sessão
-if "fase" not in st.session_state:
-    st.session_state.fase = "inicio"  # fases: inicio, escolha_personalidade, pergunta, resposta
-if "estilo" not in st.session_state:
-    st.session_state.estilo = None
-if "pergunta" not in st.session_state:
-    st.session_state.pergunta = ""
-if "resposta" not in st.session_state:
-    st.session_state.resposta = ""
+    palavras_usuario = mensagem.lower().split()
+    contador_perguntas[mensagem] += 1
+    total_interacoes += 1
 
-st.title("Soldadinho-do-Araripe Chatbot")
+    for chaves in respostas:
+        for palavra in palavras_usuario:
+            if any(palavra in c.lower() for c in (chaves if isinstance(chaves, tuple) else (chaves,))):
+                possiveis = respostas[chaves][:]
+                if ultima_resposta in possiveis and len(possiveis) > 1:
+                    possiveis.remove(ultima_resposta)
+                resposta_bot = random.choice(possiveis)
+                ultima_resposta = resposta_bot
+                historico.append(("👤 " + mensagem, resposta_bot))
+                return "", historico
 
-def escolher_personalidade():
-    st.write("Escolha o estilo de resposta:")
-    for k, v in personalidades.items():
-        if st.button(f"{k} - {v}"):
-            st.session_state.estilo = v
-            st.session_state.fase = "pergunta"
-            st.session_state.resposta = ""
-            st.session_state.pergunta = ""
+    # Se não encontrou resposta
+    resposta_bot = "🦜 Eita, não sei responder isso ainda... mas pode perguntar de pontos turísticos, hospedagem ou eventos!"
+    historico.append(("👤 " + mensagem, resposta_bot))
+    return "", historico
 
-def perguntar_tema():
-    st.write(f"Você escolheu o estilo: **{st.session_state.estilo}**")
-    pergunta = st.text_input("Sobre o que você quer saber? (ex: pontos turísticos, hospedagem, eventos)", value=st.session_state.pergunta)
-    if st.button("Enviar"):
-        if pergunta.strip() == "":
-            st.warning("Por favor, digite algo!")
-            return
-        st.session_state.pergunta = pergunta
-        # Procura resposta
-        estilo = st.session_state.estilo
-        palavras_usuario = pergunta.lower().split()
-        resposta_bot = "Ainda não sei responder isso. 😢"
-        achou = False
-        for chaves in respostas.get(estilo, {}):
-            if any(palavra in chaves for palavra in palavras_usuario):
-                valor = respostas[estilo][chaves]
-                resposta_bot = random.choice(valor)
-                achou = True
-                break
-        st.session_state.resposta = resposta_bot
-        st.session_state.fase = "resposta"
+# --- Interface estilo smartphone ---
+with gr.Blocks(theme=gr.themes.Soft()) as demo:
+    gr.Markdown("## 📱 Chat da Ararinha do Sertão")
+    gr.Markdown("Simulação de conversa compacta, estilo smartphone")
 
-def mostrar_resposta():
-    st.write(f"**Você perguntou:** {st.session_state.pergunta}")
-    st.write(f"**Resposta:** {st.session_state.resposta}")
-    if st.button("Fazer outra pergunta"):
-        st.session_state.fase = "pergunta"
-        st.session_state.pergunta = ""
-        st.session_state.resposta = ""
-    if st.button("Voltar para escolha de estilo"):
-        st.session_state.fase = "inicio"
-        st.session_state.estilo = None
-        st.session_state.pergunta = ""
-        st.session_state.resposta = ""
+    # Chatbot corrigido
+    chatbot = gr.Chatbot(
+        height=350,
+        show_label=False,
+        container=True,
+        type="messages"
+    )
 
-# Fluxo
-if st.session_state.fase == "inicio":
-    escolher_personalidade()
-elif st.session_state.fase == "pergunta":
-    perguntar_tema()
-elif st.session_state.fase == "resposta":
-    mostrar_resposta()
+    msg = gr.Textbox(
+        label="Digite sua mensagem",
+        placeholder="Escreva aqui...",
+        scale=8
+    )
+    clear = gr.Button("🔄 Limpar conversa")
+
+    # Primeira mensagem automática
+    chatbot.value = [("🦜 Ararinha", "Oi cabra! O que você deseja saber sobre a região? 😉")]
+
+    msg.submit(responder, [msg, chatbot], [msg, chatbot])
+    clear.click(lambda: [("🦜 Ararinha", "Oi cabra! O que você deseja saber sobre a região? 😉")], None, chatbot)
+
+demo.launch(share=True)
