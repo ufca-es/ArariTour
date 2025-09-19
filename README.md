@@ -35,7 +35,7 @@ Instale a dependência:
 ### 3️⃣ Executar o chatbot
     python app.py
 
-O Gradio exibirá um link local no terminal (ex.: http://localhost:7860). Abra-o no navegador para interagir com o chatbot.
+O Gradio exibirá um link local no terminal. Abra-o no navegador para interagir com o chatbot.
 
 ---
 
