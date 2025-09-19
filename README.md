@@ -51,8 +51,11 @@ O Gradio exibirá um link local no terminal (ex.: http://localhost:7860). Abra-o
 
 ## 🖼️ Demonstrações
 ### Prints
-![Imagem 1] (Imagens/Foto_1Arari.jpeg)
-![Imagem 2] (Imagens/Foto_2Arari.jpeg)
+<p align="center">
+  <img src="Imagens/Foto_1Arari.jpeg" width="400"/>
+  <img src="Imagens/Foto_2Arari.jpeg" width="400"/>
+</p>
+
 
 ### Vídeo
   [▶️ Vídeo de demonstração](Video/8d5430df-8430-4e1a-963f-206d9057f3ca.mp4)
