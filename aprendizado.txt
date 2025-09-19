@@ -1,0 +1,103 @@
+Engraçado|oi|Olá,o que você deseja saber?
+Engraçado|ois|Olá,o que você deseja saber?
+Engraçado|ola|Olá,o que você deseja saber?
+Engraçado|olá|E aí!Como posso te ajudar hoje? 😎
+Engraçado|bom dia|Bom dia!Preparado para descobrir o Cariri? 🌞
+Engraçado|bomdias|Bom dia!Preparado para descobrir o Cariri? 🌞
+Engraçado|boa tarde|Boa tarde!Bora conhecer uns lugares incríveis? 😄
+Engraçado|boas tardes|Boa tarde!Bora conhecer uns lugares incríveis? 😄
+Engraçado|boa noite|Boa noite!Quer dicas de passeios ou de comida? 🌙
+Engraçado|boas noites|Boa noite!Quer dicas de passeios ou de comida? 🌙
+Engraçado|limpar histórico|O histórico dessa conversa será limpo,basta recarregar
+Engraçado|limpar historico|O histórico dessa conversa será limpo,basta recarregar
+Engraçado|limpar históricos|O histórico dessa conversa será limpo,basta recarregar
+Engraçado|tchau|Falou!Volta logo que tem mais histórias do Cariri! 🚀
+Engraçado|xau|Falou!Volta logo que tem mais histórias do Cariri! 🚀
+Engraçado|até logo|Até mais!Não esquece de contar como foi o rolê 😜
+Engraçado|ate logo|Até mais!Não esquece de contar como foi o rolê 😜
+Engraçado|até breve|Até mais!Não esquece de contar como foi o rolê 😜
+Engraçado|ate breve|Até mais!Não esquece de contar como foi o rolê 😜
+Engraçado|pare|Beleza,vou me calar agora 🤐
+Engraçado|parar|Beleza,vou me calar agora 🤐
+Engraçado|hotel|Tem hotel de luxo e pousadinha aconchegante.Qual você prefere? 😎
+Engraçado|hoteis|Tem hotel de luxo e pousadinha aconchegante.Qual você prefere? 😎
+Engraçado|hotéis|Tem hotel de luxo e pousadinha aconchegante.Qual você prefere? 😎
+Engraçado|alojamento|Tem hotel de luxo e pousadinha aconchegante.Qual você prefere? 😎
+Engraçado|alojamentos|Tem hotel de luxo e pousadinha aconchegante.Qual você prefere? 😎
+Engraçado|estadia|Tem hotel de luxo e pousadinha aconchegante.Qual você prefere? 😎
+Engraçado|estadias|Tem hotel de luxo e pousadinha aconchegante.Qual você prefere? 😎
+Engraçado|pousada|Pousadas aconchegantes no Cariri,cabra!Quer saber preços? 🏡
+Engraçado|pousadas|Pousadas aconchegantes no Cariri,cabra!Quer saber preços? 🏡
+Engraçado|hostel|Pousadas aconchegantes no Cariri,cabra!Quer saber preços? 🏡
+Engraçado|hostels|Pousadas aconchegantes no Cariri,cabra!Quer saber preços? 🏡
+Engraçado|diária|As diárias variam bastante.Quer que eu indique algumas opções? 💰
+Engraçado|diaria|As diárias variam bastante.Quer que eu indique algumas opções? 💰
+Engraçado|diarias|As diárias variam bastante.Quer que eu indique algumas opções? 💰
+Engraçado|crato|No Crato tem hotel Encosta da Serra e pousadas raiz.Quer mais detalhes? 🏨
+Engraçado|juazeiro|Em Juazeiro do Norte,Iuá Hotel e Verdes Vales.Quer preços e localização? 📍
+Engraçado|barbalha|Em Barbalha tem Imperial Palace e pousadas locais.Quer saber mais? 🛏️
+Engraçado|sim|Opa!😎Então bora lá!O que você quer saber primeiro sobre o Cariri?
+Engraçado|sims|Opa!😎Então bora lá!O que você quer saber primeiro sobre o Cariri?
+Engraçado|ok|Opa!😎Então bora lá!O que você quer saber primeiro sobre o Cariri?
+Engraçado|certo|Opa!😎Então bora lá!O que você quer saber primeiro sobre o Cariri?
+Engraçado|não|Beleza, sem pressa. 😅
+Engraçado|nao|Beleza, sem pressa. 😅
+Engraçado|nãos|Beleza, sem pressa. 😅
+Formal|oi|Olá,o que você deseja saber?
+Formal|ois|Olá,o que você deseja saber?
+Formal|ola|Olá,o que você deseja saber?
+Formal|olá|Saudações!Estou à disposição para lhe ajudar.
+Formal|saudações|Olá,o que você deseja saber?
+Formal|saudacoes|Olá,o que você deseja saber?
+Formal|bom dia|Bom dia!Como posso orientá-lo hoje?
+Formal|bomdias|Bom dia!Como posso orientá-lo hoje?
+Formal|boa tarde|Boa tarde!Deseja informações sobre turismo ou hospedagem?
+Formal|boas tardes|Boa tarde!Deseja informações sobre turismo ou hospedagem?
+Formal|boa noite|Boa noite!Posso ajudá-lo com informações sobre o Cariri?
+Formal|boas noites|Boa noite!Posso ajudá-lo com informações sobre o Cariri?
+Formal|tchau|Até breve!Foi um prazer ajudá-lo.
+Formal|até logo|Encerrando nossa conversa.Volte sempre.
+Formal|ate logo|Encerrando nossa conversa.Volte sempre.
+Formal|até breve|Encerrando nossa conversa.Volte sempre.
+Formal|ate breve|Encerrando nossa conversa.Volte sempre.
+Formal|pare|Tudo bem,vou me calar agora.
+Formal|parar|Tudo bem,vou me calar agora.
+Formal|limpar histórico|O histórico desta conversa será apagado,basta recarregar
+Formal|limpar historico|O histórico desta conversa será apagado,basta recarregar
+Formal|hotel|Temos várias opções de hotéis.Deseja que eu informe preços e localização?
+Formal|hoteis|Temos várias opções de hotéis.Deseja que eu informe preços e localização?
+Formal|hotéis|Temos várias opções de hotéis.Deseja que eu informe preços e localização?
+Formal|alojamento|Temos várias opções de hotéis.Deseja que eu informe preços e localização?
+Formal|alojamentos|Temos várias opções de hotéis.Deseja que eu informe preços e localização?
+Formal|estadia|Temos várias opções de hotéis.Deseja que eu informe preços e localização?
+Formal|estadias|Temos várias opções de hotéis.Deseja que eu informe preços e localização?
+Formal|pousada|Existem pousadas no Cariri.Quer que eu detalhe cada uma delas?
+Formal|pousadas|Existem pousadas no Cariri.Quer que eu detalhe cada uma delas?
+Formal|hostel|Existem pousadas no Cariri.Quer que eu detalhe cada uma delas?
+Formal|hostels|Existem pousadas no Cariri.Quer que eu detalhe cada uma delas?
+Formal|diária|As diárias variam conforme o hotel/pousada.Deseja valores médios?
+Formal|diaria|As diárias variam conforme o hotel/pousada.Deseja valores médios?
+Formal|diarias|As diárias variam conforme o hotel/pousada.Deseja valores médios?
+Formal|crato|No Crato,há Hotel Encosta da Serra e pousadas econômicas.Deseja detalhes?
+Formal|juazeiro|Em Juazeiro do Norte,há Iuá Hotel e Verdes Vales.Quer informações completas?
+Formal|barbalha|Em Barbalha,opções incluem Imperial Palace Hotel e pousadas centrais.Quer preços?
+Formal|sim|Perfeito,vamos prosseguir.O que você deseja saber primeiro sobre o Cariri?
+Formal|sims|Perfeito,vamos prosseguir.O que você deseja saber primeiro sobre o Cariri?
+Formal|ok|Perfeito,vamos prosseguir.O que você deseja saber primeiro sobre o Cariri?
+Formal|certo|Perfeito,vamos prosseguir.O que você deseja saber primeiro sobre o Cariri?
+Formal|não|Tudo bem,aguardo sua próxima pergunta.
+Formal|nao|Tudo bem,aguardo sua próxima pergunta.
+Formal|nãos|Tudo bem,aguardo sua próxima pergunta.
+Regional|oi|Olá,o que você deseja saber?
+Regional|ois|Olá,o que você deseja saber?
+Regional|ola|Olá,o que você deseja saber?
+Regional|olá|Oi, meu rei!Bora conversar sobre o Cariri?
+Regional|ei|Olá,o que você deseja saber?
+Regional|opa|Olá,o que você deseja saber?
+Regional|meu rei|Olá,o que você deseja saber?
+Regional|bom dia|Ôxente!Bom dia,cabra bom!
+Regional|bomdias|Ôxente!Bom dia,cabra bom!
+Regional|boa tarde|Boa tarde,visse!Quer umas dicas do
+Regional|bora|Oxente, simbora! 🤠 Quer dica de pousada, de festa ou de comida boa?
+Formal|bora|Perfeito, podemos prosseguir. Deseja informações sobre hospedagem, eventos ou gastronomia?
+Engraçado|bora|Boraaa! 😎 Quer saber sobre hospedagem, eventos ou comidas do Cariri?
