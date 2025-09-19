@@ -1,49 +1,90 @@
-# ChatBot ArariTour
+# 🤖 ChatBot ArariTour
 
-## Descrição do Projeto
+## 📌 Descrição do Projeto
+O **ArariTour** é um chatbot interativo desenvolvido em **Python** com a biblioteca **Gradio**, que fornece informações sobre a região do **Cariri**.  
+Ele ajuda turistas e moradores a conhecerem **pontos turísticos**, **hospedagem**, **gastronomia** e **eventos locais**, oferecendo uma experiência divertida e personalizada.
 
-O **ArariTour** é um chatbot interativo desenvolvido em Python usando a biblioteca **Gradio**. Ele fornece informações sobre a região do **Cariri**, incluindo pontos turísticos, hospedagem, gastronomia e eventos locais. Além disso, o chatbot possui três estilos de linguagem diferentes:
+O chatbot possui **três estilos de linguagem**:
+- 🏡 **Regional**: linguagem típica da região, informal e acolhedora.  
+- 🏛️ **Formal**: respostas polidas e institucionais.  
+- 😂 **Engraçado**: tom descontraído, com emojis e expressões divertidas.  
 
-- **Regional:** linguagem típica da região, informal e acolhedora.
-- **Formal:** respostas mais polidas e institucionais.
-- **Engraçado:** tom divertido e descontraído, com emojis e expressões informais.
+Recursos principais:
+- Perguntar sobre turismo e cultura local.  
+- Ensinar **novas respostas** ao chatbot (aprendizado dinâmico).  
+- Limpar o **histórico de conversa** e resetar os contadores de interação.  
+- Visualizar um **resumo da sessão** ao encerrar.  
 
-O usuário pode:
-
-- Perguntar sobre turismo e cultura local.
-- Ensinar novas respostas ao chatbot.
-- Limpar o histórico de conversa e resetar contadores de interações.
-- Sair da sessão e visualizar um resumo de interações.
-
-O mascote do chatbot é **Araripinho**, uma representação divertida do “soldadinho do Araripe”.
-
----
-
-## Funcionalidades
-
-1. Chatbot com múltiplos estilos de linguagem.
-2. Armazenamento de histórico de conversas (últimas 5 interações exibidas).
-3. Aprendizado de novas respostas pelo usuário.
-4. Contadores de interações e estilos usados.
-5. Botão para limpar histórico e resetar contadores.
-6. Resumo da sessão ao sair.
+Mascote: **Araripinho** — representação divertida do *soldadinho-do-Araripe*.
 
 ---
 
-## Tecnologias Utilizadas
+## 🚀 Como Executar
 
-- Python 3.x
-- Gradio
-- Collections (Counter)
-- Sistema de arquivos local para persistência (`.txt`)
+### 1️⃣ Pré-requisitos
+- **Python 3.x** instalado  
+- Biblioteca: `gradio`
+
+Instale a dependência:
+    pip install gradio
+
+### 2️⃣ Clonar o repositório
+    git clone https://github.com/seu-usuario/ArariTour.git
+    cd ArariTour
+
+### 3️⃣ Executar o chatbot
+    python app.py
+
+O Gradio exibirá um link local no terminal (ex.: http://localhost:7860). Abra-o no navegador para interagir com o chatbot.
 
 ---
 
-## Estrutura de Arquivos
-
-- `app.py` → Código principal do chatbot.
-- `historico.txt` → Armazena as interações do usuário com o bot.
-- `aprendizado.txt` → Armazena novas respostas aprendidas.
-- `contador_estilos.txt` → Armazena o contador de uso dos estilos de linguagem.
+## 👥 Integrantes e Funções
+| Integrante         | Função no Projeto                                      |
+|--------------------|--------------------------------------------------------|
+| André Wesley       | 🧑‍💻 Desenvolvedor Principal – programação e integração com Gradio |
+| Pedro Kauan        | 🎨 Design de Interface – layout e imagens              |
+| Ramona Vitória     | 📚 Conteúdo e Pesquisa – informações turísticas e textos|
+| Renan Munhoz       | 🧪 Testes e Qualidade – QA e validação de respostas    |
 
 ---
+
+## 🖼️ Demonstrações
+### Prints
+- Coloque imagens de exemplo em `docs/print1.png`, `docs/print2.png` e referencie-as aqui.
+
+### Vídeo
+  [▶️ Vídeo de demonstração](Video/8d5430df-8430-4e1a-963f-206d9057f3ca.mp4)
+
+---
+
+## 🗂️ Estrutura de Arquivos
+
+📁 ArariTour  
+├─ 📄 app.py                # Código principal do chatbot  
+├─ 📄 README.md             # Documento de apresentação do projeto  
+├─ 📄 requirements.txt      # Dependências do Python  
+├─ 📁 data                  # Arquivos de dados  
+│   ├─ 📄 historico.txt     # Histórico de interações  
+│   ├─ 📄 aprendizado.txt   # Respostas aprendidas  
+│   └─ 📄 contador_estilos.txt  # Contador de estilos de linguagem  
+├─ 📁 docs                  # Arquivos de demonstração  
+│   ├─ 🖼️ print1.png        # Captura de tela da interface  
+│   └─ 🖼️ print2.png        # Exemplo de conversa  
+└─ 📁 assets                # (Opcional) Ícones, mascote, imagens extras  
+    └─ 🖼️ araripinho.png
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+- **Python 3.13** linguagem utilizada 
+- **Gradio** (interface web)  
+- **collections.Counter** para contagem de estilos/interações  
+- **Arquivos .txt** para persistência simples
+- **ChatGPT** para construção do código
+- **VSCode** para testes e modificações do código principal
+
+---
+
+### 📜 Licença
+Projeto para fins educacionais e demonstrativos. Contribuições são bem-vindas! 🚀
