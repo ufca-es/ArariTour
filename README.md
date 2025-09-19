@@ -82,7 +82,8 @@ O Gradio exibirá um link local no terminal. Abra-o no navegador para interagir 
 
 ## 🛠️ Tecnologias Utilizadas
 - **Python 3.13** linguagem utilizada 
-- **Gradio** (interface web)  
+- **Gradio** (interface web)
+- **Copilot** correção de bugs na interface pelo codespace 
 - **collections.Counter** para contagem de estilos/interações  
 - **Arquivos .txt** para persistência simples
 - **ChatGPT** para construção do código
