@@ -22,7 +22,7 @@ Mascote: **Araripinho** — representação divertida do *soldadinho-do-Araripe*
 ## 🚀 Como Executar
 
 ### 1️⃣ Pré-requisitos
-- **Python 3.x** instalado  
+- **Python 3.13** instalado  
 - Biblioteca: `gradio`
 
 Instale a dependência:
