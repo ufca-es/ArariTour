@@ -72,9 +72,9 @@ O Gradio exibirá um link local no terminal. Abra-o no navegador para interagir 
 │   ├─ 📄 historico.txt     # Histórico de interações  
 │   ├─ 📄 aprendizado.txt   # Respostas aprendidas  
 │   └─ 📄 contador_estilos.txt  # Contador de estilos de linguagem  
-├─ 📁 docs                  # Arquivos de demonstração  
-│   ├─ 🖼️ print1.png        # Captura de tela da interface  
-│   └─ 🖼️ print2.png        # Exemplo de conversa  
+├─ 📁 Imagens                  # Arquivos de demonstração  
+│   ├─ 🖼️ Foto_1Arari.jpeg        # Captura de tela da interface  
+│   └─ 🖼️ Foto_2Arari.jpeg       # Exemplo de conversa  
 └─ 📁 assets                # (Opcional) Ícones, mascote, imagens extras  
     └─ 🖼️ araripinho.png
 
